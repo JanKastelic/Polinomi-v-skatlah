@@ -4,6 +4,7 @@
   <head>
     <title>Spletno gradivo z orodjem Remark</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" ref="style.css">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
@@ -16,27 +17,40 @@
       }_
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .remark-slide-content { background-size: contain; }
+
+      .shadowbox {
+        width: "text-width";
+        border: 1px solid #333;
+        box-shadow: 8px 8px 5px #444;
+        padding: 8px 12px;
+        background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+      }
     </style>
   </head>
   <body>
     <textarea id="source">
 
       class: center, middle
+
       # Polinomi v škatlah
 
-      Kakšna je največja prostornina škatle z odprtim vrhom, ki jo lahko oblikujemo iz kosa kartona pravokotne oblike?
+      <br>
+      <em>Kakšna je največja prostornina škatle z odprtim vrhom, ki jo lahko oblikujemo iz kosa kartona pravokotne oblike?</em>
       
       ---
 
       ## Polinomska funkcija
       
-      Polinomska funkcija $p(x)$ ima standardno obliko $p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$.
+      Polinomska funkcija $p(x)$ ima standardno obliko $$p(x) = a\_n x^n + a\_{n-1} x^{n-1} + \cdots + a\_1 x + a\_0.$$
 
       To je vsota členov, kjer je vsak sestavljen iz konstantnega koeficienta ($a_i$), pomnoženega z neodvisno spremenljivko ($x$) na nek nenegativen celoštevilski eksponent; členi so razvrščeni po padajočih eksponentih. Stopnja polinomske funkcije je vrednost največjega eksponenta ($n$).
-      
-      <font size="5">PRIMER</font> 
 
+      <br>
+      --
+      <div class="shadowbox">
+      <b font size="5">PRIMER</b font> <br>
       $f(x) = 5x^3 - 24x^2 + 13x + 27$ je polinomska funkcija tretje stopnje (znana tudi kot kubična funkcija). Konstantni člen (v tem primeru $27$) je koeficient, pomnožen z $x$ na ničelno potenco.      
+      </div>
       
       
       ???
@@ -46,9 +60,12 @@
 
       ## Problem
             
-      Imate list lahkega kartona, ki ga želite zložiti v škatlo z odprtim vrhom, tako da iz vsakega vogala izrežete kvadrat s stranico dolžine $x$ in prepognete stranice. List kartona je velik $8 \times 10 ~ cm$. Katera vrednost $x$-a nam da največjo možno prostornino škatle?
+      Imate list lahkega kartona, ki ga želite zložiti v škatlo z odprtim vrhom, tako da iz vsakega vogala izrežete kvadrat s stranico dolžine $x$ in prepognete stranice. List kartona je velik $8 \times 10 ~ cm$. 
 
       <center><img src="karton_z_merami.png" alt="Karton z merami - skica" width="250"></center>
+      --
+      <b><em>Katera vrednost $x$-a nam da največjo možno prostornino škatle?</em></b>
+
       
       Reševanja tega problema se lahko lotimo na več načinov.
            
@@ -85,26 +102,30 @@
       ---
 
       **Izpolnjevanje tabele:**
-
-      * Generiranje vrednosti za $x$: začnemo z $0$, (že vpisana); v naslednjo vrstico (v celico ```B4```) vpišete formulo, ki bo podala vrednosti za $x$ glede na želeno diferenco med vrednostmi (izberete jo s spustnim seznamom v tabeli *KARTON*), za začeten primer naj bo $0,5$. Formula: ```=B3+$I$5```. Le-to 'pomnožite' po stolpcu navzdol, dokler ne pridete do vrednosti $\frac{dolžina}{2}$.
-
-      * Generiranje vrednosti za dolžino $l$, glede na velikost $x$ in dolžino prvotnega kosa kartona (izberete s spustnim seznamom v tabeli *KARTON*), za začetek naj bo $10$. Ta formula je sledeča: ``` =$I$3-2*B3 ```. Prav tako tudi to formulo, uporabite na celotnem stolpcu ```C``` tabele.
-
-      * Generiranje vrednosti za širino $g$, odvisno od velikost $x$-a in širino prvotnega kosa kartona (izberete s spustnim seznamom v tabeli *KARTON*), za prvi primer jo nastavite na $8$. Ta formula je: ``` =$I$4-2*B3 ```. Tudi to formulo, uporabite na celotnem stolpcu ```D``` tabele.
-
-      * V petem stolpcu bodo zapisane vrednosti za višino $h$ škatle, ki je enaka velikosti $x$, torej formula: ``` =B3 ```. To formulo prav tako 'multiplicirajte' do konca ustvarjene tabele.
-
-      * Sedaj morate samo še v šestem stolpcu zapisati formulo za velikost prostornine dobljene škatle, in sicer: ``` =C3*D3*E3 ```. Formulo zapišite v vse vrstice tabele.
-
-      ???
-
-      ---
-
-      <font size="3">VPRAŠANJE</font> 
-      Kolikšna je največja prostornina škatle v skladu s to tabelo? Kaj pa, če bi uporabili manjši prirastek za $x$?
-
-      Sedaj poskusite spreminjati diference za $x$ na manjše vrednosti, ustrezno prilagodite tudi velikost nabora podatkov v glavni tabeli.
-
+      
+      <ul>
+      --
+        <li>
+          Generiranje vrednosti za $x$: začnemo z $0$, (že vpisana); v naslednjo vrstico (v celico ```B4```) vpišete formulo, ki bo podala vrednosti za $x$ glede na želeno diferenco med vrednostmi (izberete jo s spustnim seznamom v tabeli *KARTON*), za začeten primer naj bo $0,5$. Formula: ```=B3+$I$5```. Le-to 'pomnožite' po stolpcu navzdol, dokler ne pridete do vrednosti $\frac{dolžina}{2}$.
+        </li>
+      --
+        <li>
+          Generiranje vrednosti za dolžino $l$, glede na velikost $x$ in dolžino prvotnega kosa kartona (izberete s spustnim seznamom v tabeli *KARTON*), za začetek naj bo $10$. Ta formula je sledeča: ``` =$I$3-2*B3 ```. Prav tako tudi to formulo, uporabite na celotnem stolpcu ```C``` tabele.
+        </li>
+      --
+        <li>
+          Generiranje vrednosti za širino $g$, odvisno od velikost $x$-a in širino prvotnega kosa kartona (izberete s spustnim seznamom v tabeli *KARTON*), za prvi primer jo nastavite na $8$. Ta formula je: ``` =$I$4-2*B3 ```. Tudi to formulo, uporabite na celotnem stolpcu ```D``` tabele.
+        </li>
+      --
+        <li>
+          V petem stolpcu bodo zapisane vrednosti za višino $h$ škatle, ki je enaka velikosti $x$, torej formula: ``` =B3 ```. To formulo prav tako 'multiplicirajte' do konca ustvarjene tabele.
+        </li>
+      --
+        <li>
+          V šesti stolpec zapišite formulo za velikost prostornine, in sicer: ``` =C3*D3*E3 ```. 
+        </li>
+      </ul>
+      --
       Vizualizirajte rezultate tako, da jih narišete na graf. Pri izbiri grafa izberite razpršeni graf XY.
 
       ---
