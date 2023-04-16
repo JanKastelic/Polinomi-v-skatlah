@@ -36,6 +36,7 @@
       box-shadow: 8px 8px 5px #444;
       padding: 8px 12px;
       background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+      margin-top: 35px;
     }
 
     .excel {
@@ -119,7 +120,7 @@
       S tem ste našli vrednost $x$-a, ki nam da škatlo z največjo prostornino.
       ---
       
-      ## 2. Izdelava preglednice
+      ## 2. način: izdelava preglednice
 
       --
 
@@ -147,20 +148,31 @@
       
       ---
 
-      <br>
-      <font size="5"><b>Izpolnjevanje tabele:</b></font>
+      ### Izpolnjevanje tabele:
       
-      * Generiranje vrednosti $x$: začnemo z $0$, (že vpisana); nato pa uporabimo formulo <span class="excel">```=B3+$I$5```</span>, ki bo podala vrednosti za $x$ glede na želeno diferenco, za začeten primer naj bo $0,5$. 
+      --
       
-      * Generiranje vrednosti $l$: za izračun vpišemo formulo <span class="excel">``` =$I$3-2*B3 ```</span>, glede na velikost $x$ in dolžino prvotnega kosa kartona, za začetek naj bo $10$.
-
-      * Generiranje vrednosti $g$: zapišemo formulo <span class="excel">``` =$I$4-2*B3 ```</span>, odvisno od velikost $x$-a in širine prvotnega kosa kartona, za prvi primer jo nastavite na $8$.
-
-      * Višina $h$ škatle je enaka velikosti $x$, torej na to da formula <span class="excel">``` =B3 ```</span>. 
-
-      * Zapišemo še zadnjo formulo, in sicer za velikost prostornine, <span class="excel">``` =C3*D3*E3 ```</span>. 
+      * Generiranje vrednosti $x$: začnemo z $0$, (že vpisana); nato pa uporabimo formulo <span class="excel"><code>=B3+$I$5</code></span>, ki bo podala vrednosti za $x$ glede na želeno diferenco, za začeten primer naj bo $0,5$. 
 
       --
+
+      * Generiranje vrednosti $l$: za izračun vpišemo formulo <span class="excel"><code>=$I$3-2*B3 </code></span>, glede na velikost $x$ in dolžino prvotnega kosa kartona, za začetek naj bo $10$.
+
+      --
+
+      * Generiranje vrednosti $g$: zapišemo formulo <span class="excel"><code>=$I$4-2*B3 </code></span>, odvisno od velikost $x$-a in širine prvotnega kosa kartona, za prvi primer jo nastavite na $8$.
+
+      --
+
+      * Višina $h$ škatle je enaka velikosti $x$, torej na to da formula <span class="excel"><code>=B3</code></span>. 
+
+      --
+
+      * Zapišemo še zadnjo formulo, in sicer za velikost prostornine, <span class="excel"><code>=C3\*D3*E3</code></span>. 
+
+      --
+      <br>
+      <br>
 
       Vizualizirajte rezultate tako, da jih narišete na graf. Pri izbiri grafa izberite razpršeni graf XY.
 
@@ -176,81 +188,129 @@
 
       ## Uporaba prvega in drugega odvoda za iskanje lokalnega maksimuma in minimuma funkcije
 
-      Na primeru kvadratnega in kubičnega polinoma si poglejmo uporabo prvega in drugega odvoda za iskanje lokalnih maksimumov in lokalnih minimumov.
+      --
 
-      <br> 
+      Poglejmo si uporabo na primeru kvadratnega in kubičnega polinoma.
+
+      --
 
       <div class="shadowbox">
-        <font size="3">*PRIMER 1*</font> \
-        Naj bo $p(x)= -x^2 + 4x + 5$ polinom druge stopnje. \
-        Potem je $p'(x) = -2x + 4$ in $p''(x) = -2$.\
-        Zapišemo enačbo $p'(x)= 0$, ki nam da $-2x + 4 = 0$ in $x = 2$. \
+        <b font size="3">PRIMER 1</b font> <br>
+        Naj bo $p(x)= -x^2 + 4x + 5$ polinom druge stopnje. <br>
+        Potem je $p'(x) = -2x + 4$ in $p''(x) = -2$. <br>
+        Zapišemo enačbo $p'(x)= 0$, ki nam da $-2x + 4 = 0$ in $x = 2$. <br>
         Ker je $p'(2) = 0$ in $p''(2) < 0$, je točka $(2, 9)$ lokalni maksimum.
       </div>
       
-      <br>
+      --
 
       <div class="shadowbox">
-        **PRIMER 2**
+        <b font size="3">PRIMER 2</b font> <br>
 
-        Naj bo $p(x) = \frac{x^3}{3} - \frac{5x^2}{2} + 6x + 1$ polinom tretje stopnje. \
-        Potem je $p'(x) = x^2 - 5x + 6$ in $p''(x) = 2x - 5$. \
-        Zapišemo enačbo $p'(x) = 0$, ki nam da $x_1 = 2$ in $x_2 = 3$. \
+        Naj bo $p(x) = \frac{x^3}{3} - \frac{5x^2}{2} + 6x + 1$ polinom tretje stopnje. <br>
+        Potem je $p'(x) = x^2 - 5x + 6$ in $p''(x) = 2x - 5$. <br>
+        Zapišemo enačbo $p'(x) = 0$, ki nam da $x_1 = 2$ in $x_2 = 3$. <br>
         Ker je $p''(2) = - 1 < 0$ (za $x_1=2$), je točka $(2, 5.67)$ lokalni maksimum, in ker je $p''(3) = 1 > 0$ (za $x_2=3$), je točka $(3,5.5)$ lokalni minimum.
       </div> 
 
+      ???
+
+      Povej, kakšen je kriterij pri prvem in drugem odvodu za določitev, ali je vrednost minimum ali maksimum funkcije.
+
       ---
          
-      Sedaj se vrnimo, k reševanju problema o škatli.
+      ### Naš problem
+
+      --
       
       Prostornina škatle kot funkcija dolžine izreza je:
-      $$\begin{aligned}V(x) &= x (10 - 2x) (8 - 2x) \\
-      &= 4x^3 - 36x^2 + 80x\\
-      &= 4 (x^3 - 9x^2 + 20x)
-      \end{aligned}$$
+      --
+      $$V(x) = x (10 - 2x) (8 - 2x) $$ 
+      --
+      $$~ ~ ~ ~ ~ ~= 4x^3 - 36x^2 + 80x$$
+      --
+      $$~ ~ ~ ~ ~ ~ ~ = 4 (x^3 - 9x^2 + 20x).$$
       
+      --
+
       Potem je prvi odvod:
-      $$V'(x) = 4 (3x^2 - 18x + 20)$$
+      $$V'(x) = 4 (3x^2 - 18x + 20).$$
+      
+      --
+
       Drugi odvod pa:
-      $$V''(x) = 4 (6x - 18)$$
+      $$V''(x) = 4 (6x - 18).$$
+
+      --
+      <br>
       
-      Zdaj naj bo $V' = 0$. Rešiti želimo enačbo $3x^2 - 18x + 20 = 0$.
+      Postavimo enačbo tako, da bo $V' = 0$. 
       
-      Glede na kvadratno enačbo: $$ax^2+bx+c=0;$$ sta korena enaka: $$x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac}}{2a}.$$
-      
-      Tudi za reševanje tega problema lahko ustvarimo preglednico, ki nam bo pomagala pri iskanju korenov.
-      
-     
-      Preglednica za reševanje $3x^2 - 18x + 20 = 0$ z uporabo $x=\frac{-b \pm \sqrt{b^2-4ac}}{2a}$ in $V''(x) = 4 (6x - 18)$ izgleda tako:
-      <figure>
-        <img src="koreni_odvoda.png" alt="Koreni odvoda" width="120">
-      </figure>
-            
+      --
+
+      Rešiti želimo enačbo $3x^2 - 18x + 20 = 0$.
+
       ---
+      
+      Glede na kvadratno enačbo: $$ax^2+bx+c=0;$$ 
+      --
+      sta korena enaka: $$x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac}}{2a}.$$
 
-      **Izpolnjevanje preglednice:**
+      --
+      
+      Tudi za reševanje tega lahko ustvarimo preglednico. 
+      --
+      Ta glede na splošno kvadratno enačbo izgleda tako:
 
-      * Za vrednosti $a$, $b$ in $c$ vnesite podane vrednosti, torej $a=3,~b=-18,~c=20$.
+      <figure>
+        <center><img src="koreni_odvoda.png" alt="Koreni odvoda" width="140"></center>
+      </figure>
+      
+      ---
+          
+      ### Izpolnjevanje preglednice
+      
+      --
 
-      * Vrednosti $x_1$ in $x_2$ izračunamo po kvadratni formuli, torej vnesemo formulo: ```=(-B3+SQRT(B3^2-4*B2*B4))/2*B2``` za $x_1$ in ```=(-B3-SQRT(B3^2-4*B2*B4))/2*B2``` za $x_2$.
+      * Za vrednosti $a$, $b$ in $c$ vnesemo podane vrednosti, torej $a=3,~b=-18,~c=20$.
 
-      * Za vrednost drugega odvoda pri danem $x$-u vnesemo preprosto formulo: ``` =4*(6*A10-18) ```.
+      --
 
-      * Pri izboru $x$-a za izračun končnega volumna moramo biti pozorni, da vzamemo vrednost, ki nam bo podala maksimalen volumen, torej tisto, ki ima negativno vrednost drugega odvoda. To storimo s formulo: ``` =INDEX(A10:B11;MATCH(MIN(B10:B11);B10:B11;0);1) ```.
+      * Vrednosti $x_1$ in $x_2$ izračunamo po kvadratni formuli, torej vnesemo formulo: <span class="excel"><code>=(-B3+SQRT(B3^2-4\*B2\*B4))/2\*B2</code></span> za $x_1$ in <span class="excel"><code>=(-B3-SQRT(B3^2-4\*B2\*B4))/2\*B2</code></span> za $x_2$.
 
-      * Volumen pa izračunamo po prej določeni formuli. Torej vnesem enačbo: ``` =4*(B14^3-9*B14^2+B4*B14) ```.
+      --
+
+      * Za vrednost drugega odvoda pri danem $x$-u vnesemo preprosto formulo: <span class="excel"><code>=4\*(6\*A10-18) </code></span>.
+
+      --
+
+      * Pri izboru $x$-a za izračun končnega volumna moramo biti pozorni, da vzamemo vrednost, ki nam bo podala maksimalen volumen, torej tisto, ki ima negativno vrednost drugega odvoda. To storimo s formulo: <span class="excel"><code>=INDEX(A10:B11;MATCH(MIN(B10:B11);B10:B11;0);1) </code></span>.
+
+      --
+
+      * Volumen pa izračunamo po prej določeni formuli. Torej vnesemo enačbo: <span class="excel"><code>=4\*(B14^3-9\*B14^2+B4\*B14) </code></span>.
 
       ---
 
       ## Zaključek
       
+      --
+
       1. Zakaj preglednice, ki smo jih ustvarili uporabljajo vrednosti $x$-a v območju od $0$ do $4$?
 
+      --
+
       2. Pri iskanju najboljše vrednosti za $x$, smo le-to iskali na $0,5~cm$ natančno. Poskusite to storiti za manjši korak. Kakšna je razlika v rezultatu?
+
+      --
       
       3. Nalogo prevedite še za stvaritev škatle, ustvarjene iz kartona velikosti $20 \times 10~ cm$. Poiščite največjo prostornino takšne škatle.
+
+      --
       
       4. Imamo pravokoten kos kartona velikosti $a \times b$. Poiščite dolžino kvadratnega izreza, ki maksimizira prostornino odprte škatle.
+
+      --
       
       5. Pravokotne škatle so različnih oblik in velikosti. Poiščite neko odprto škatlo in določite njeno prostornino. Nato škatlo razprite in določite velikost prvotnega pravokotnega kosa kartona ter kako je bil izrezan in zložen za izdelavo vaše škatle. Izračunajte največjo prostornino škatle, ki bi jo lahko naredili iz tega kosa kartona. Je večja od tiste, s katero ste začeli?
       
