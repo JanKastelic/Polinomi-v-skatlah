@@ -1,38 +1,57 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Spletno gradivo z orodjem Remark</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" ref="style.css">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }_
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-      .remark-slide-content { background-size: contain; }
+<head>
+  <title>Spletno gradivo z orodjem Remark</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" ref="style.css">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      .shadowbox {
-        width: "text-width";
-        border: 1px solid #333;
-        box-shadow: 8px 8px 5px #444;
-        padding: 8px 12px;
-        background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
-      }
-    </style>
-  </head>
-  <body>
-    <textarea id="source">
+    body {
+      font-family: 'Droid Serif';
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+    }
+
+    _ .remark-code,
+    .remark-inline-code {
+      font-family: 'Ubuntu Mono';
+    }
+
+    .remark-slide-content {
+      background-size: contain;
+    }
+
+    .shadowbox {
+      width: "text-width";
+      border: 1px solid #333;
+      box-shadow: 8px 8px 5px #444;
+      padding: 8px 12px;
+      background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+    }
+
+    .excel {
+      color: red
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
 
       class: center, middle
 
       # Polinomi v škatlah
+
+      --
 
       <br>
       <em>Kakšna je največja prostornina škatle z odprtim vrhom, ki jo lahko oblikujemo iz kosa kartona pravokotne oblike?</em>
@@ -40,10 +59,14 @@
       ---
 
       ## Polinomska funkcija
+
+      --
       
       Polinomska funkcija $p(x)$ ima standardno obliko $$p(x) = a\_n x^n + a\_{n-1} x^{n-1} + \cdots + a\_1 x + a\_0.$$
 
-      To je vsota členov, kjer je vsak sestavljen iz konstantnega koeficienta ($a_i$), pomnoženega z neodvisno spremenljivko ($x$) na nek nenegativen celoštevilski eksponent; členi so razvrščeni po padajočih eksponentih. Stopnja polinomske funkcije je vrednost največjega eksponenta ($n$).
+      To je vsota členov, kjer je vsak sestavljen iz konstantnega koeficienta ($a_i$), pomnoženega z neodvisno spremenljivko ($x$) na nek nenegativen celoštevilski eksponent; členi so razvrščeni po padajočih eksponentih. 
+      
+      Stopnja polinomske funkcije je vrednost največjega eksponenta ($n$).
 
       <br>
       --
@@ -55,97 +78,129 @@
       
       ???
 
-      
+      Omeni še kvadratno funkcijo kot poseben primer.
       ---
 
       ## Problem
+
+      --
             
       Imate list lahkega kartona, ki ga želite zložiti v škatlo z odprtim vrhom, tako da iz vsakega vogala izrežete kvadrat s stranico dolžine $x$ in prepognete stranice. List kartona je velik $8 \times 10 ~ cm$. 
 
       <center><img src="karton_z_merami.png" alt="Karton z merami - skica" width="250"></center>
+   
       --
-      <b><em>Katera vrednost $x$-a nam da največjo možno prostornino škatle?</em></b>
 
-      
+      <br>
+      <div class="shadowbox"> 
+      <b><em>VPRAŠANJE: Katera vrednost $x$-a nam da največjo možno prostornino škatle?</em></b>
+      </div>
+
+      ???
       Reševanja tega problema se lahko lotimo na več načinov.
            
       ---
 
-      ## 1. Sestavljanje škatle
+      ## 1. način: sestavljanje škatle
 
-      Lahko vzamete veliko listov kartona in preizkusite veliko različnih možnosti za izbiro $x$-a. 
-      
-      Za to boste potrebovali tudi lepilni trak in nekaj za polnjenje škatle (npr. pesek, zrnato žito ...).
+      --
 
-      Za vaš prvi $x$ - recimo $x = 0,5 ~cm$ - napolnite zloženo škatlo. Nato poskusite z nekoliko večjim $x$ - recimo $1,0~cm$. Potem stresite vsebino prve škatle v drugo škatlo in ugotovili boste, da boste morali dodati več polnila. Nato po potrebi postopek ponavljajte, dokler ne ugotovite, da imate z večjim $x$-em preveč vsebine iz prejšnje škatle.
+      S sestavljanjem škatel preizkusite različne možnosti izbir $x$-a.
+
+      Potrebujete:
+      * liste kartona enakih velikosti;
+      * lepilni trak in 
+      * polnilo za škatlo (npr. pesek, zrnato žito ...).
+
+      --
+
+      Za vaš prvi $x$, recimo $x = 0,5 ~cm$, napolnite zloženo škatlo. Nato poskusite z nekoliko večjim $x$-em, recimo $1,0~cm$. Stresite vsebino prve škatle v drugo škatlo in ugotovili boste, da boste morali dodati več polnila. Nato po potrebi postopek ponavljajte, dokler ne ugotovite, da imate z večjim $x$-em preveč vsebine iz prejšnje škatle.
             
+      S tem ste našli vrednost $x$-a, ki nam da škatlo z največjo prostornino.
       ---
       
       ## 2. Izdelava preglednice
 
+      --
+
       Prostornina pravokotne škatle je odvisna od dolžine ($l$), širine ($g$) in višine ($h$):
       
-      $$V = l\times g\times h$$
+      $$V = l\times g\times h.$$
       
-      Sedaj želimo oblikovati preglednico, ki pomnoži $l$, $g$ in $h$, za številne zaporedne vrednosti $x$. 
+      --
       
-      Začnemo lahko s stolpcem za $l$, stolpcem za $g$, stolpcem za $h$ in stolpcem za njihov produkt - prostornino $V$.
-      
+      Oblikovati želimo preglednico, ki pomnoži $l$, $g$ in $h$, za številne zaporedne vrednosti $x$. 
+
+      --
+
       V <a href="https://lokar.fmf.uni-lj.si/moodle/mod/resource/view.php?id=7844">*Excelovi datoteki*</a> najdete preglednico, ki jo boste uporabili v nadaljevanju.
-      
+
       <figure>
         <img src="izračun_volumna.png" alt="Izračun volumna - tabela" style="horizontal-align: middle">
-      </figure>
+      </figure>      
 
+      --
+
+      Začnemo lahko s stolpcem za $l$, stolpcem za $g$, stolpcem za $h$ in stolpcem za njihov produkt, to je prostornino $V$.
+      
       ???
       
       ---
 
-      **Izpolnjevanje tabele:**
+      <br>
+      <font size="5"><b>Izpolnjevanje tabele:</b></font>
       
-      <ul>
+      * Generiranje vrednosti $x$: začnemo z $0$, (že vpisana); nato pa uporabimo formulo <span class="excel">```=B3+$I$5```</span>, ki bo podala vrednosti za $x$ glede na želeno diferenco, za začeten primer naj bo $0,5$. 
+      
+      * Generiranje vrednosti $l$: za izračun vpišemo formulo <span class="excel">``` =$I$3-2*B3 ```</span>, glede na velikost $x$ in dolžino prvotnega kosa kartona, za začetek naj bo $10$.
+
+      * Generiranje vrednosti $g$: zapišemo formulo <span class="excel">``` =$I$4-2*B3 ```</span>, odvisno od velikost $x$-a in širine prvotnega kosa kartona, za prvi primer jo nastavite na $8$.
+
+      * Višina $h$ škatle je enaka velikosti $x$, torej na to da formula <span class="excel">``` =B3 ```</span>. 
+
+      * Zapišemo še zadnjo formulo, in sicer za velikost prostornine, <span class="excel">``` =C3*D3*E3 ```</span>. 
+
       --
-        <li>
-          Generiranje vrednosti za $x$: začnemo z $0$, (že vpisana); v naslednjo vrstico (v celico ```B4```) vpišete formulo, ki bo podala vrednosti za $x$ glede na želeno diferenco med vrednostmi (izberete jo s spustnim seznamom v tabeli *KARTON*), za začeten primer naj bo $0,5$. Formula: ```=B3+$I$5```. Le-to 'pomnožite' po stolpcu navzdol, dokler ne pridete do vrednosti $\frac{dolžina}{2}$.
-        </li>
-      --
-        <li>
-          Generiranje vrednosti za dolžino $l$, glede na velikost $x$ in dolžino prvotnega kosa kartona (izberete s spustnim seznamom v tabeli *KARTON*), za začetek naj bo $10$. Ta formula je sledeča: ``` =$I$3-2*B3 ```. Prav tako tudi to formulo, uporabite na celotnem stolpcu ```C``` tabele.
-        </li>
-      --
-        <li>
-          Generiranje vrednosti za širino $g$, odvisno od velikost $x$-a in širino prvotnega kosa kartona (izberete s spustnim seznamom v tabeli *KARTON*), za prvi primer jo nastavite na $8$. Ta formula je: ``` =$I$4-2*B3 ```. Tudi to formulo, uporabite na celotnem stolpcu ```D``` tabele.
-        </li>
-      --
-        <li>
-          V petem stolpcu bodo zapisane vrednosti za višino $h$ škatle, ki je enaka velikosti $x$, torej formula: ``` =B3 ```. To formulo prav tako 'multiplicirajte' do konca ustvarjene tabele.
-        </li>
-      --
-        <li>
-          V šesti stolpec zapišite formulo za velikost prostornine, in sicer: ``` =C3*D3*E3 ```. 
-        </li>
-      </ul>
-      --
+
       Vizualizirajte rezultate tako, da jih narišete na graf. Pri izbiri grafa izberite razpršeni graf XY.
+
+      ???
+
+      Opozorilo: Kako se zaklene celica pri pisanju formul?
+
+      Diference $x$, dolžino in širino kosa kartona se izbere s spustnim seznamom v tabeli KARTON.
+
+      Le-to 'pomnožite' po stolpcu navzdol, dokler ne pridete do vrednosti $\frac{dolžina}{2}$.
 
       ---
 
       ## Uporaba prvega in drugega odvoda za iskanje lokalnega maksimuma in minimuma funkcije
 
       Na primeru kvadratnega in kubičnega polinoma si poglejmo uporabo prvega in drugega odvoda za iskanje lokalnih maksimumov in lokalnih minimumov.
+
+      <br> 
+
+      <div class="shadowbox">
+        <font size="3">*PRIMER 1*</font> \
+        Naj bo $p(x)= -x^2 + 4x + 5$ polinom druge stopnje. \
+        Potem je $p'(x) = -2x + 4$ in $p''(x) = -2$.\
+        Zapišemo enačbo $p'(x)= 0$, ki nam da $-2x + 4 = 0$ in $x = 2$. \
+        Ker je $p'(2) = 0$ in $p''(2) < 0$, je točka $(2, 9)$ lokalni maksimum.
+      </div>
       
-      > <font size="3">*PRIMER 1*</font> \
-      > Naj bo $p(x)= -x^2 + 4x + 5$ polinom druge stopnje. \
-      > Potem je $p'(x) = -2x + 4$ in $p''(x) = -2$.\
-      > Zapišemo enačbo $p'(x)= 0$, ki nam da $-2x + 4 = 0$ in $x = 2$. \
-      > Ker je $p'(2) = 0$ in $p''(2) < 0$, je točka $(2, 9)$ lokalni maksimum.
-      
-      > <font size="3">*PRIMER 2*</font>\
-      > Naj bo $p(x) = \frac{x^3}{3} - \frac{5x^2}{2} + 6x + 1$ polinom tretje stopnje. \
-      > Potem je $p'(x) = x^2 - 5x + 6$ in $p''(x) = 2x - 5$. \
-      > Zapišemo enačbo $p'(x) = 0$, ki nam da $x_1 = 2$ in $x_2 = 3$. \
-      > Ker je $p''(2) = - 1 < 0$ (za $x_1=2$), je točka $(2, 5.67)$ lokalni maksimum, in ker je $p''(3) = 1 > 0$ (za $x_2=3$), je točka $(3,5.5)$ lokalni minimum.
-      
+      <br>
+
+      <div class="shadowbox">
+        **PRIMER 2**
+
+        Naj bo $p(x) = \frac{x^3}{3} - \frac{5x^2}{2} + 6x + 1$ polinom tretje stopnje. \
+        Potem je $p'(x) = x^2 - 5x + 6$ in $p''(x) = 2x - 5$. \
+        Zapišemo enačbo $p'(x) = 0$, ki nam da $x_1 = 2$ in $x_2 = 3$. \
+        Ker je $p''(2) = - 1 < 0$ (za $x_1=2$), je točka $(2, 5.67)$ lokalni maksimum, in ker je $p''(3) = 1 > 0$ (za $x_2=3$), je točka $(3,5.5)$ lokalni minimum.
+      </div> 
+
+      ---
+         
       Sedaj se vrnimo, k reševanju problema o škatli.
       
       Prostornina škatle kot funkcija dolžine izreza je:
@@ -203,28 +258,28 @@
 
 
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-    <script>
-      function klik() {
-        document.getElementById("na-klik").innerHTML = "Bomo ja!"
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+  </script>
+  <script>
+    var slideshow = remark.create();
+  </script>
+  <script>
+    function klik() {
+      document.getElementById("na-klik").innerHTML = "Bomo ja!"
+    }
+  </script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
       }
-    </script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        svg: {
-          fontCache: 'global'
-        }
-      };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
-  </body>
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+</body>
+
 </html>
