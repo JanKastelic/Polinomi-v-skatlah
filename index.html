@@ -10,7 +10,7 @@
     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
     @import url(https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap);
-  
+
     body {
       font-family: 'Noto Serif';
     }
@@ -186,11 +186,11 @@
 
       --
 
-      * Višina $h$ škatle je enaka velikosti $x$, torej na to da formula <span class="excel"><code>=B3</code></span>. 
+      * Višina $h$ škatle je enaka velikosti $x$, torej nam to da formula: <span class="excel"><code>=B3</code></span>. 
 
       --
 
-      * Zapišemo še zadnjo formulo, in sicer za velikost prostornine, <span class="excel"><code>=C3\*D3*E3</code></span>. 
+      * Zapišemo še zadnjo formulo, in sicer za velikost prostornine: <span class="excel"><code>=C3\*D3*E3</code></span>. 
 
       --
       <br>
@@ -198,7 +198,7 @@
 
       Vizualizirajte rezultate tako, da jih narišete na graf. Pri izbiri grafa izberite razpršeni graf XY.
 
-
+      <button onclick="resitev()">Rešitev problema (Pija Kapš)</button> <label id="na-resitev"></label>
       ---
 
       ## Uporaba prvega in drugega odvoda za iskanje lokalnega maksimuma in minimuma funkcije
@@ -216,7 +216,7 @@
         Zapišemo enačbo $p'(x)= 0$, ki nam da $-2x + 4 = 0$ in $x = 2$. <br>
         Ker je $p'(2) = 0$ in $p''(2) < 0$, je točka $(2, 9)$ lokalni maksimum.
       </div>
-      
+
       ???
 
       Povej, kakšen je kriterij pri prvem in drugem odvodu za določitev, ali je vrednost minimum ali maksimum funkcije.
@@ -340,9 +340,9 @@
     var slideshow = remark.create();
   </script>
   <script>
-    function klik() {
-      document.getElementById("na-klik").innerHTML = "Bomo ja!"
-    }
+    resitev = function () {
+      window.open("https://lokar.fmf.uni-lj.si/moodle/mod/resource/view.php?id=7847", "_blank");
+    };
   </script>
   <script>
     MathJax = {
