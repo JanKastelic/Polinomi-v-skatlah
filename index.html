@@ -9,16 +9,28 @@
     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
     @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
     @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
+    @import url(https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap);
+  
     body {
-      font-family: 'Droid Serif';
+      font-family: 'Noto Serif';
     }
 
-    h1,
-    h2,
+    h1 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+      color: #277d76;
+    }
+
+    h2 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+      color: #24aa9f;
+    }
+
     h3 {
       font-family: 'Yanone Kaffeesatz';
       font-weight: normal;
+      color: #135953;
     }
 
     _ .remark-code,
@@ -28,14 +40,15 @@
 
     .remark-slide-content {
       background-size: contain;
+      background-color: #fcf7f2;
     }
 
     .shadowbox {
       width: "text-width";
       border: 1px solid #333;
-      box-shadow: 8px 8px 5px #444;
+      box-shadow: 5px 5px 3px #444;
       padding: 8px 12px;
-      background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+      background-image: linear-gradient(150deg, #87d5cfed, #94c2be 30%, #cce1df);
       margin-top: 35px;
     }
 
@@ -55,7 +68,7 @@
       --
 
       <br>
-      <em>Kakšna je največja prostornina škatle z odprtim vrhom, ki jo lahko oblikujemo iz kosa kartona pravokotne oblike?</em>
+      <b><em>Kakšna je največja prostornina škatle z odprtim vrhom, ki jo lahko oblikujemo iz kosa kartona pravokotne oblike?</em></b>
       
       ---
 
@@ -94,10 +107,11 @@
 
       <br>
       <div class="shadowbox"> 
-      <b><em>VPRAŠANJE: Katera vrednost $x$-a nam da največjo možno prostornino škatle?</em></b>
+      <b><em><center>Katera vrednost $x$-a nam da največjo možno prostornino škatle?</center></em></b>
       </div>
 
       ???
+
       Reševanja tega problema se lahko lotimo na več načinov.
            
       ---
@@ -154,6 +168,14 @@
       
       * Generiranje vrednosti $x$: začnemo z $0$, (že vpisana); nato pa uporabimo formulo <span class="excel"><code>=B3+$I$5</code></span>, ki bo podala vrednosti za $x$ glede na želeno diferenco, za začeten primer naj bo $0,5$. 
 
+      ???
+
+      Opozorilo: Kako se zaklene celica pri pisanju formul?
+
+      Diference $x$, dolžino in širino kosa kartona se izbere s spustnim seznamom v tabeli KARTON.
+
+      Le-to 'pomnožite' po stolpcu navzdol, dokler ne pridete do vrednosti $\frac{dolžina}{2}$.
+
       --
 
       * Generiranje vrednosti $l$: za izračun vpišemo formulo <span class="excel"><code>=$I$3-2*B3 </code></span>, glede na velikost $x$ in dolžino prvotnega kosa kartona, za začetek naj bo $10$.
@@ -176,13 +198,6 @@
 
       Vizualizirajte rezultate tako, da jih narišete na graf. Pri izbiri grafa izberite razpršeni graf XY.
 
-      ???
-
-      Opozorilo: Kako se zaklene celica pri pisanju formul?
-
-      Diference $x$, dolžino in širino kosa kartona se izbere s spustnim seznamom v tabeli KARTON.
-
-      Le-to 'pomnožite' po stolpcu navzdol, dokler ne pridete do vrednosti $\frac{dolžina}{2}$.
 
       ---
 
@@ -202,6 +217,10 @@
         Ker je $p'(2) = 0$ in $p''(2) < 0$, je točka $(2, 9)$ lokalni maksimum.
       </div>
       
+      ???
+
+      Povej, kakšen je kriterij pri prvem in drugem odvodu za določitev, ali je vrednost minimum ali maksimum funkcije.
+      
       --
 
       <div class="shadowbox">
@@ -213,9 +232,6 @@
         Ker je $p''(2) = - 1 < 0$ (za $x_1=2$), je točka $(2, 5.67)$ lokalni maksimum, in ker je $p''(3) = 1 > 0$ (za $x_2=3$), je točka $(3,5.5)$ lokalni minimum.
       </div> 
 
-      ???
-
-      Povej, kakšen je kriterij pri prvem in drugem odvodu za določitev, ali je vrednost minimum ali maksimum funkcije.
 
       ---
          
@@ -272,7 +288,7 @@
       
       --
 
-      * Za vrednosti $a$, $b$ in $c$ vnesemo podane vrednosti, torej $a=3,~b=-18,~c=20$.
+      * Za vrednosti $a$, $b$ in $c$ vnesemo podane vrednosti, torej $a=3,~b=-18$ in $c=20$.
 
       --
 
@@ -280,15 +296,15 @@
 
       --
 
-      * Za vrednost drugega odvoda pri danem $x$-u vnesemo preprosto formulo: <span class="excel"><code>=4\*(6\*A10-18) </code></span>.
+      * Za vrednost drugega odvoda pri danem $x$-u vnesemo preprosto formulo: <span class="excel"><code>=4\*(6\*A10-18)</code></span>.
 
       --
 
-      * Pri izboru $x$-a za izračun končnega volumna moramo biti pozorni, da vzamemo vrednost, ki nam bo podala maksimalen volumen, torej tisto, ki ima negativno vrednost drugega odvoda. To storimo s formulo: <span class="excel"><code>=INDEX(A10:B11;MATCH(MIN(B10:B11);B10:B11;0);1) </code></span>.
+      * Pri izboru $x$-a za izračun končnega volumna moramo biti pozorni, da vzamemo vrednost, ki nam bo podala maksimalen volumen, torej tisto, ki ima negativno vrednost drugega odvoda. To storimo s formulo: <span class="excel"><code>=INDEX(A10:B11;MATCH(MIN(B10:B11);B10:B11;0);1)</code></span>.
 
       --
 
-      * Volumen pa izračunamo po prej določeni formuli. Torej vnesemo enačbo: <span class="excel"><code>=4\*(B14^3-9\*B14^2+B4\*B14) </code></span>.
+      * Volumen pa izračunamo po prej določeni formuli. Torej vnesemo enačbo: <span class="excel"><code>=4\*(B14^3-9\*B14^2+B4\*B14)</code></span>.
 
       ---
 
